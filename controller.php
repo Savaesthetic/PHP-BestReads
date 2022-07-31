@@ -2,6 +2,10 @@
     require_once './model.php';
     $db = new Model();
 
-    $something = $db->testHerokuDB();
-    echo $something;
+    $arr = $db->testHerokuDB();
+    $result = '';
+    foreach ($arr as $book) {
+        $result .= implode(",", $book);
+    }
+    echo $result;
 ?>
