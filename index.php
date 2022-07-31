@@ -19,6 +19,8 @@
                     console.log(typeof response);
                     if (Array.isArray(response)) {
                         console.log(response.join);
+                    } else {
+                        console.log(response);
                     }
                 }
             }
