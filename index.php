@@ -15,7 +15,11 @@
             ajax.send();
             ajax.onreadystatechange = function() {
                 if (ajax.readyState === 4 && ajax.status == 200) {
-                    console.log(ajax.responseText);
+                    const response = ajax.responseText;
+                    console.log(typeof response);
+                    if (Array.isArray(response)) {
+                        console.log(response.join);
+                    }
                 }
             }
         }
