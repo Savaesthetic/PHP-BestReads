@@ -3,5 +3,5 @@
     $db = new Model();
 
     $something = $db->testHerokuDB();
-    echo $something[0];
+    echo $something;
 ?>
