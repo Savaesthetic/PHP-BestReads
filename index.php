@@ -31,7 +31,9 @@
         
         function bookInfo(element) {
             const image = element.src;
-            console.log(image);
+            const regex = new RegExp('.*(/images.*)')
+            const match = image.match(regex);
+            console.log(match);
             // var ajax = new XMLHttpRequest();
             // ajax.open('POST', 'controller.php?load=modal&image=' + src, true);
             // ajax.send();
