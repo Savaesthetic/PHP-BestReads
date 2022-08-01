@@ -11,7 +11,9 @@
         }
         echo $result;
     } else if (isset ($_GET['load']) && isset ($_GET['image']) && $_GET['load'] === 'modal') {
-        $book = $db->getBook($_GET['image']);
+        $image = "." . $_GET['image'];
+        $book = $db->getBook($image);
+
         $html = "<div class=onereview>";
         $html .= "<img src=" . $book['image'] . " >";
         $html .= "<div class=thedetails>";
