@@ -2,10 +2,14 @@
     require_once './model.php';
     $db = new Model();
 
-    if (isset ( $_GET ['todo'] ) && $_GET ['todo'] === 'getQuotes') {
-        $arr = $theDBA->getAllQuotations();
-        unset($_GET ['todo']);
-        echo getQuotesAsHTML ( $arr );
+    if (isset ( $_GET ['load'] ) && $_GET ['load'] === 'covers') {
+        $arr = $db->getAllImages();
+        unset($_GET ['load']);
+        $result = '';
+        foreach ($arr as $src) {
+            $result .= "<img class=onebook onClick=bookInfo(this) src=" . $src['image'] . " >";
+        }
+        echo $result;
     } else {
         $arr = $db->testHerokuDB();
         $result = '';
