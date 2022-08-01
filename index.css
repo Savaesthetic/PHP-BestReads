@@ -16,6 +16,7 @@ body {
 }
 
 .onebook:hover {
+	cursor: pointer;
 	background-color: #8cd3ff;
 }
 
