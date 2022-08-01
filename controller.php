@@ -10,6 +10,8 @@
             $result .= "<img class=onebook onClick=bookInfo(this) src=" . $src['image'] . " >";
         }
         echo $result;
+    } else if (false) {
+        echo "something";
     } else {
         $arr = $db->testHerokuDB();
         $result = '';

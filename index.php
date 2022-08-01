@@ -23,25 +23,25 @@
             ajax.send();
             ajax.onreadystatechange = function() {
                 if (ajax.readyState === 4 && ajax.status == 200) {
-                    const html = ajax.responseText;
                     var div = document.getElementById("content");
-                    div.innerHTML = html;
+                    div.innerHTML = ajax.responseText;
                 }
             }
         }
         
-        // function bookInfo(element) {
-        //     var arr = element.src.match(/.*\/(books\/.*\/)cover.jpg/);
-        //     var ajax = new XMLHttpRequest();
-        //     ajax.open('GET', 'bestreads.php?load=' + arr[1], true);
-        //     ajax.send();
-        //     ajax.onreadystatechange = function() {
-        //         if (ajax.readyState === 4 && ajax.status == 200) {
-        //             var div = document.getElementById("images");
-        //             div.innerHTML = ajax.responseText;
-        //         }
-        //     }
-        // }
+        function bookInfo(element) {
+            const image = element.src;
+            console.log(image);
+            // var ajax = new XMLHttpRequest();
+            // ajax.open('POST', 'controller.php?load=modal&image=' + src, true);
+            // ajax.send();
+            // ajax.onreadystatechange = function() {
+            //     if (ajax.readyState === 4 && ajax.status == 200) {
+            //         var div = document.getElementById("content");
+            //         div.innerHTML = ajax.responseText;
+            //     }
+            // }
+        }
 
         function testDB() {
             var ajax = new XMLHttpRequest();

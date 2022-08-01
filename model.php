@@ -36,5 +36,12 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        // Return book by image
+        public function getBook() {
+            $stmt = $this->DB->prepare("SELECT * FROM books WHERE image='./images/2001spaceodyssey.jpg';");
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
     }
 ?>
