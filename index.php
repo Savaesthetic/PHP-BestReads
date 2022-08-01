@@ -33,7 +33,7 @@
             const image = element.src;
             const regex = new RegExp('.*(/images.*)')
             const match = image.match(regex);
-            const location = match[1];
+            const location = "." + match[1];
             var ajax = new XMLHttpRequest();
             ajax.open('GET', 'controller.php?load=modal&image=' + location, true);
             ajax.send();
