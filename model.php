@@ -42,7 +42,6 @@
             $stmt = $this->DB->prepare("SELECT * FROM books WHERE image='" . $image . "';");
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
-            // return "test";
         }
     }
 ?>

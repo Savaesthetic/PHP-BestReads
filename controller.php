@@ -11,7 +11,6 @@
         }
         echo $result;
     } else if (isset ($_GET['load']) && isset ($_GET['image']) && $_GET['load'] === 'modal') {
-        //$image = "." . $_GET['image'];
         $book = $db->getBook($_GET['image']);
 
         $html = "<div class=onereview>";
@@ -26,7 +25,6 @@
         $html .= "</b><br>" . $book['review'];
         $html .= "</div></div>";
         echo $html;
-        // echo 'new yes';
     } else {
         $arr = $db->testHerokuDB();
         $result = '';
