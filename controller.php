@@ -12,21 +12,21 @@
         echo $result;
     } else if (isset ($_GET['load']) && isset ($_GET['image']) && $_GET['load'] === 'modal') {
         //$image = "." . $_GET['image'];
-        // $book = $db->getBook($_GET['image']);
+        $book = $db->getBook($_GET['image']);
 
-        // $html = "<div class=onereview>";
-        // $html .= "<img src=" . $book['image'] . " >";
-        // $html .= "<div class=thedetails>";
-        // $html .= "<b>" . $book['title'] . "</b><br>by " . $book['author'];
-        // $html .= "<p>" . $book['description'] . "</p>";
-        // $html .= "<b>" . $book['reviewer'] . " ";
-        // for ($i = 0; $i < $book['rating']; $i++) {
-        //     $html .= "*";
-        // }
-        // $html .= "</b><br>" . $book['review'];
-        // $html .= "</div></div>";
-        // echo $html;
-        echo 'new yes';
+        $html = "<div class=onereview>";
+        $html .= "<img src=" . $book['image'] . " >";
+        $html .= "<div class=thedetails>";
+        $html .= "<b>" . $book['title'] . "</b><br>by " . $book['author'];
+        $html .= "<p>" . $book['description'] . "</p>";
+        $html .= "<b>" . $book['reviewer'] . " ";
+        for ($i = 0; $i < $book['rating']; $i++) {
+            $html .= "*";
+        }
+        $html .= "</b><br>" . $book['review'];
+        $html .= "</div></div>";
+        echo $html;
+        // echo 'new yes';
     } else {
         $arr = $db->testHerokuDB();
         $result = '';
