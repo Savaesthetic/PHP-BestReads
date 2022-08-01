@@ -33,16 +33,16 @@
             const image = element.src;
             const regex = new RegExp('.*(/images.*)')
             const match = image.match(regex);
-            console.log(match);
-            // var ajax = new XMLHttpRequest();
-            // ajax.open('POST', 'controller.php?load=modal&image=' + src, true);
-            // ajax.send();
-            // ajax.onreadystatechange = function() {
-            //     if (ajax.readyState === 4 && ajax.status == 200) {
-            //         var div = document.getElementById("content");
-            //         div.innerHTML = ajax.responseText;
-            //     }
-            // }
+            const location = '.' + match[1];
+            var ajax = new XMLHttpRequest();
+            ajax.open('GET', 'controller.php?load=modal&image=' + location, true);
+            ajax.send();
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState === 4 && ajax.status == 200) {
+                    var div = document.getElementById("content");
+                    div.innerHTML = ajax.responseText;
+                }
+            }
         }
 
         function testDB() {
