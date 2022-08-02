@@ -1,3 +1,1 @@
-###
-MAKE AUTHOR AND TITLE OF BOOK 100 CHAR MAX INPUT ON CREATE BOOK Suggestion
-###
+Book recommendation site built using PHP and PostgreSQL for the backend data storage.
